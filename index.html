@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/moon.min.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <title>Selenium IDE</title>
+    <style media="screen">
+      span.code {
+        font-family: monospace !important;
+        color: #F7C690;      }
+      pre {
+        box-shadow: none !important;
+      }
+      .reveal{
+        background-color:#3D253B;
+      }
+      .center{
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Selenium IDE</h1>
+          <h3>Narzędzie testerskie</h3>
+        </section>
+
+        <section>
+          <section>
+            <h2>Co to jest SELENIUM IDE?</h2>
+          </section>
+
+          <section>
+            <h3>Poznaj Selenium</h3>
+            <p>Selenium IDE to zintegrowane środowisko deweloperskie do testowania Web aplikacji. Jest ono zaimplementowane jako dodatek do przeglądarki Mozilla Firefox, dzięki czemu nie trzeba się przejmować instalacją skomplikowanych narzędzi, czy dodatkową konfiguracją środowiska testowego.</p>
+          </section>
+
+          <section>
+            <p>Po dodaniu wtyczki do przeglądarki, narzędzie jest gotowe do pracy.</p>
+            <img src="./plugin.png" alt="Plugin">
+          </section>
+
+          <section>
+            <h3>Rezultat</h3>
+            <img src="./welcome.png" alt="Rezultat">
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h2>Język poleceń Selenesse</h2>
+          </section>
+          <section>
+            <h3>Wprowadzenie do komend</h3>
+            <div class="center">
+            <p>Komendy Selenesse mogą mieć maksymalnie dwa parametry:</p>
+            <ul>
+              <li><span class="code">Target</span></li>
+              <li><span class="code">Value</span></li>
+            </ul>
+            <p>Parametry nie są zawsze wymagane.</p><p>Zależy to od wybranych komend.</p>
+            </div>
+          </section>
+          <section>
+            <img src="./tas2.png" alt="Parametry">
+          </section>
+          <section>
+            <h3>Typy komend</h3>
+            <ul>
+              <li><span class="code">Actions (Akcje)</span> - Są to komendy, które bezpośrednio wchodzą w interakcje z przeglądarką.</li>
+              <li><span class="code">Accessors (Akcesoria)</span> - Są to komendy, które pozwalają nam przechowywać wartości w zmiennej.</li>
+              <li><span class="code">Assertions (Asercje)</span> - Są to komendy, które sprawdzają czy określony warunek został spełniony.</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Popularne komendy</h3>
+            <ul>
+            <li><span class="code">open</span> - Otwiera stronę używając adresu URL</li>  
+            <li><span class="code">click</span> - Klika w określony element</li>
+            <li><span class="code">type</span> - Wpisuje tekst/wartości we wskazane pola</li>
+            <li><span class="code">verify title / assert title</span></li>
+            - Porównuje określony tytuł strony z rzeczywistym
+            <li><span class="code">verify text / assert text</span></li> 
+            - Sprawdza, czy występuje określony tekst
+            <li><span class="code">verify not text / assert not text</span></li>
+            - Sprawdza, czy  nie występuje określony tekst
+            </ul>
+          </section>
+          <section>
+            <h3>Popularne komendy cd.</h3>
+            <ul>
+            <li><span class="code">assert element present</span> - Sprawdza, czy określony element występuje na stronie</li>  
+            <li><span class="code">assert element not present</span> - Sprawdza, czy określony element nie występuje na stronie</li>
+            <li><span class="code">pause</span> - Zatrzymuje wykonywanie skryptu na określony czas. W Value wpisujemy czas np. 5000. Spowoduję to zatrzymanie skryptu na 5 sekund</li>
+            </ul>
+          </section>  
+          <section>        
+            <h3>Assert vs Verify.</h3>
+            <ul>
+              <li><span class="code">Assert</span> - Test bądź cały zestaw testów zostanie natychmiast przerwany jeśli komenda "assert" nie powiedzie się.</li>  
+              <li><span class="code">Verify</span> - Kiedy komenda "verify" nie powiedzie się to Selenium IDE zarejestruje błąd w logach. Natomiast test bądź zestaw testów będzie dalej kontynuowany.</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Assert</h3>
+            <img src="./assert.png" alt="Assert">
+          </section>
+          <section>
+              <h3>Verify</h3>
+              <img src="./verify.png" alt="Verify">
+          </section>
+	     </section>
+
+
+    <section>
+     <section>
+       <h2>Lokalizatory</h2>
+     </section>
+		 <section>
+      <h3> Podstawowe lokalizatory</h3>
+      <div >
+      <ul>
+        <li><span class="code">ID </span>  np. id=email</li>
+        <li><span class="code">Name</span>  np. name=userName</li>
+        <li><span class="code">Link Text</span>  np. link=REGISTER</li>
+      </ul>
+      </div>
+     </section>
+
+     <section>
+        <h3> Lokalizator XPATH</h3>
+        <p>XPATH używamy aby lokalizować elementy i atrybuty w dokumencie HTML na stronie. Zawiera on ponad 100 wbudowanych funkcji. XPATH używa wyrażeń ścieżki do wybierania elementów w dokumencie.
+           Używamy gdy nie ma na stronie podstawowych lokalizatorów.
+           //step//step...</p>
+        </section>
+        <section>
+          <pre>
+            <code>
+                &lt;body&gt;
+                  &lt;h1>Czas na zakupy&lt;/h1&gt;
+                  &lt;ul class="Lista zakupów"&gt;
+                  &lt;li>ziemniaki&lt;/li&gt;
+                  &lt;li>mandarynki&lt;/li&gt;
+                  &lt;/ul&gt;
+                &lt;/body&gt;
+                              
+              </code>
+          </pre>
+        </section>
+        <section>
+        <pre>             
+        <code>
+
+        xpath=//h1[contains(text(),'Czas na zakupy')]
+        xpath=//h1[contains(text(),'Username')]
+        xpath=//ul[@class='Lista zakupow']//li[1] - Ziemniaki
+        xpath=//ul[@class='Lista zakupow']//li[2] - Mandarynki
+
+                          
+          </code>
+        </pre>
+
+        </section>
+ 
+     </section>
+ 
+         <section>
+           <section>
+             <h2>Inne</h2>
+           </section>
+           <section>
+             <h3>Przykład</h3>
+             <video src="./video.webm" id="ex-video"></video>
+             <div>
+               <button type="button" id="ex-play" onclick="playVideo()" name="play">Play</button>
+               <button type="button" id="ex-pause" onclick="pauseVideo()" name="pause">Pause</button>
+             </div>
+             <p>Status: <span id="ex-playing">ZAŁADOWANO</span></p>
+           </section>
+           <section>
+             <h3>Źródła</h3>
+             <ul>
+               <li>
+                 <a href="https://www.udemy.com/">Udemy</a>
+               </li>
+             </ul>
+           </section>
+ 
+           <section>
+             <h3>Dziękuję za uwagę</h3>
+             <h5>Zuzanna Wojtyniak</h5>
+           </section>
+         </section>
+       </div>
+     </div>
+
+
+    <script src="./index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js" charset="utf-8"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript">
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      defaultTiming: 120,
+      slideNumber: false,
+      history: false,
+      keyboard: true,
+      overview: true,
+      center: true,
+      touch: true,
+      loop: false,
+      rtl: false,
+      shuffle: false,
+      fragments: true,
+      embedded: false,
+      help: true,
+      showNotes: false,
+      autoPlayMedia: null,
+      autoSlide: 0,
+      autoSlideStoppable: true,
+      autoSlideMethod: Reveal.navigateNext,
+      mouseWheel: false,
+      hideAddressBar: true,
+      previewLinks: false,
+      transition: 'slide',
+      transitionSpeed: 'default',
+      backgroundTransition: 'fade',
+      viewDistance: 3,
+      parallaxBackgroundImage: '',
+      parallaxBackgroundSize: '',
+      parallaxBackgroundHorizontal: null,
+      parallaxBackgroundVertical: null,
+      display: 'block'
+    });
+    </script>
+  </body>
+</html>
